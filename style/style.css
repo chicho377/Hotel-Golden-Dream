@@ -1,0 +1,957 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #337ab7;
+    padding: 10px;
+    position: relative; /* Necesario para posicionar la imagen de hojas */
+}
+
+.header a {
+    color: #fff;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.section {
+    /*margin: 20px 0;*/
+    background: lightskyblue;
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.image-container img {
+    width: 30%;
+}
+
+.room {
+    margin-bottom: 20px;
+}
+
+.room img {
+    width: 100%;
+}
+
+.room h3 {
+    margin: 10px 0;
+}
+
+.footer {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.footer-links li:first-child {
+    margin-left: 0;
+}
+
+.footer-links a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #007bff;
+}
+
+.social-icon {
+    display: inline-block;
+    color: #007bff;
+    font-size: 24px;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    color: #0056b3;
+}
+
+
+/* Estilos para el logo */
+.logo {
+    width: 100px; /* Ajusta el tamaño del logo según tus preferencias */
+    height: 100px;
+    border-radius: 50%; /* Esto hará que el logo sea redondo */
+    border: 5px solid #071952; /* Agrega un borde de 3 píxeles de ancho en color blanco */
+    /* Agrega otros estilos según tus necesidades */
+    position: relative; /* Agrega posición relativa para el posicionamiento del círculo */
+    z-index: 1; /* Agrega z-index para asegurar que el logo esté por encima del círculo */
+}
+
+/* Estilos para el círculo alrededor del logo */
+.logo::before {
+    content: ""; /* Agrega contenido vacío */
+    position: absolute; /* Agrega posición absoluta para el círculo */
+    top: -5px; /* Ajusta la posición vertical del círculo con respecto al logo */
+    left: -5px; /* Ajusta la posición horizontal del círculo con respecto al logo */
+    width: 110px; /* Ajusta el ancho del círculo (más grande que el logo) */
+    height: 110px; /* Ajusta la altura del círculo (más grande que el logo) */
+    border-radius: 50%; /* Hace que el círculo tenga bordes redondeados */
+    background-color: #071952; /* Color de fondo del círculo (azul) */
+    z-index: -1; /* Agrega un z-index negativo para colocar el círculo detrás del logo */
+}
+
+/* Estilos para el contenedor del logo y los botones de navegación*/
+.header {
+    display: flex; /* Usa flexbox para alinear los elementos horizontalmente */
+    align-items: center; /* Centra verticalmente los elementos */
+    background-color: white; /* Color de fondo del encabezado */
+    padding: 10px; /* Añade un espaciado para mayor claridad */
+    border: 10px solid #071952;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    bottom: -10px;
+    left: -10px;
+    border: 10px solid #071952; /* Grosor y color del borde interior */
+    border-radius: 15px; /* Borde redondeado solo en el lado interior */
+}
+
+.nav-links {
+    margin-left: 15px; /* Ajusta la distancia horizontal entre los botones y el logo */
+}
+
+.nav-links a {
+    margin-left: 15px; /* Ajusta la distancia horizontal entre los botones */
+    padding: 10px 20px; /* Ajusta el relleno interno del botón (vertical horizontal) */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px; /* Hace que los botones tengan bordes redondeados */
+    border: 3px solid #fff; /* Agrega un borde de 3 píxeles de ancho en color blanco */
+    background-color: #3498db; /* Color de fondo del botón (azul) */
+    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+    font-weight: bold; /* Añade negrita al texto */
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+    font-size: 16px; /* Ajusta el tamaño del texto */
+}
+
+/* Estilos para los botones de navegación */
+.nav-links a {
+    position: relative;
+    font-size: 17px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1em 2.5em;
+    display: inline-block;
+    border-radius: 50px;
+    transition: all .3s;
+    border: none;
+    font-family: Arial, sans-serif;
+    font-weight: 600;
+    color: white;
+    background-color: #3498db;
+    cursor: pointer;
+}
+
+.nav-links a:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-links a:active {
+    transform: scale(0.95);
+    box-shadow: none;
+}
+
+.nav-links a::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.nav-links a::after {
+    background-color: #2980b9;
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1.2) scaleY(1.4);
+    opacity: 0;
+}
+
+/* Estilos para la imagen de hojas de decoración */
+.decorative-leaves {
+    position: absolute;
+    top: -18px; /* Ajusta la posición vertical */
+    right: -10px; /* Ajusta la posición horizontal */
+    /*width: 80px;  Ajusta el ancho */
+    height: 80px; /* Ajusta la altura */
+    /* Ajusta el tamaño y posición según tus necesidades */
+}
+
+/* Estilos para la sección */
+.section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /*align-items: flex-start;*/
+    padding: 10;
+    background: #071952;
+}
+
+/* Estilos para la sección2 */
+.section2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /*align-items: flex-start;*/
+    padding: 10;
+    background: lightskyblue;
+}
+
+/* Estilos para la sección3 */
+.section3 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 88px; /* Agrega "px" para especificar la unidad de medida */
+    background-image: url("img/prueba.jpg"); /* Reemplaza la ruta con la ubicación de tu imagen */
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el fondo */
+    background-position: center; /* Centra la imagen en el fondo */
+    border-radius: 6px;
+}
+
+/* Agrega estilos para el contenedor de la reserva */
+.card-inner {
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Agrega estilos para el título */
+.card-inner h2 {
+    margin-bottom: 20px;
+    color: #eee;
+}
+
+.card {
+    width: 410px;
+    height: 750px;
+    transition: all 0.2s;
+    position: relative;
+    cursor: pointer;
+}
+
+.card-inner {
+    width: inherit;
+    height: inherit;
+    background: rgba(255,255,255,.05);
+    box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+}
+
+.card:hover {
+    transform: scale(1.04) rotate(1deg);
+}
+
+
+/* Estilos para el título del formulario */
+.form-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Estilos para las filas de campos */
+.form-group-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+/* Estilos para los campos */
+.form-group {
+    width: calc(50% - 10px);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group select {
+    appearance: none;
+    -webkit-appearance: none;
+    background: url("arrow-down.svg") no-repeat right center;
+    background-size: 16px 16px;
+    padding-right: 30px;
+    cursor: pointer;
+}
+
+.input-wrapper input {
+    background-color: #eee;
+    border: none;
+    padding: 1rem;
+    font-size: 1rem;
+    width: 13em;
+    border-radius: 1rem;
+    color: lightcoral;
+    box-shadow: 0 0.4rem #dfd9d9;
+    cursor: pointer;
+  }
+  
+  .input-wrapper input:focus {
+    outline-color: lightcoral;
+  }
+  
+  /* Estilos para el campo de selección de habitación */
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    color: #333;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: linear-gradient(45deg, #3498db, #3498db 25%, transparent 25%, transparent 75%, #3498db 75%, #3498db),
+                      linear-gradient(135deg, #3498db, #3498db 25%, transparent 25%, transparent 75%, #3498db 75%, #3498db);
+    background-size: 8px 8px;
+    background-position: 0 2px, 4px 6px;
+}
+
+.form-group select:focus {
+    border-color: #2980b9;
+}
+
+.form-group select option {
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+.radio-inputs {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 0.5rem;
+    background-color: #EEE;
+    box-sizing: border-box;
+    box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+    padding: 0.25rem;
+    font-size: 14px;
+    flex-direction: column;
+  }
+  
+  .radio-inputs .radio {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+  
+  .radio-inputs .radio input {
+    display: none;
+  }
+  
+  .radio-inputs .radio .name {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    border: none;
+    padding: .5rem 0;
+    color: rgba(51, 65, 85, 1);
+    transition: all .15s ease-in-out;
+  }
+  
+  .radio-inputs .radio input:checked + .name {
+    background-color: #fff;
+    font-weight: 600;
+  }
+
+/* Estilos para el botón */
+.button {
+    display: block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.button:focus {
+    outline: none;
+}
+
+
+/* Estilos para la imagen a la izquierda */
+.left-image {
+    flex: 1;
+    max-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1D5D9B; /* Color de fondo adicional para la imagen */
+    padding: 70px; /* Espaciado alrededor de la imagen */
+    margin-right: 20px;
+    border-radius: 4px;
+}
+
+.left-image img {
+    width: 129%;
+    border-radius: 10px;
+}
+
+/* Estilos para el contenido a la derecha */
+.right-content {
+    flex: 1;
+    max-width: 800px;
+    padding: 25;
+    background: lightskyblue;
+    border-radius: 4px;
+}
+
+.right-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Estilos para el contenedor de imágenes a la derecha */
+.right-content .image-container {
+    display: flex;
+    justify-content:space-between;
+    margin-top: 20px;
+}
+
+.right-content .image-container img {
+    width: 30%;
+    border-radius: 10px;
+    padding: 7;
+}
+
+.contenedor-principal {
+    position: relative; /* Asegura que el contenedor sea el padre del div de partículas */
+}
+
+.header {
+    position: relative; /* Asegura que el contenido del header esté posicionado correctamente */
+    z-index: 1; /* Asegura que el header esté en el primer plano */
+}
+
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Asegura que el div de partículas esté detrás de los otros elementos */
+}
+
+/* Estilos para la sección de habitaciones */
+#room-types {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Estilos para cada habitación */
+.room {
+    max-width: 300px;
+    text-align: center;
+    margin: 20px;
+    padding: 10;
+    border: 6px solid #071952;
+    border-radius: 8px;
+}
+
+.room img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.room h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.room p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.room a {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* Estilos para el botón de reserva */
+.button {
+    display: inline-block;
+    padding: 1.3em 3em;
+    margin-top: 20px; /* Agregamos un margen superior */
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none; /* Agregar para quitar subrayado en el enlace */
+}
+
+.button:hover {
+    background-color: #23c483;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+.button:active {
+    transform: translateY(-1px);
+}
+
+.room-image {
+    border: 3px solid transparent;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.room-image:hover {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+#location {
+    background-color: #f0f0f0;
+}
+
+.location-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr; /* Divide el contenido en 3 partes, la del medio es el doble de ancho */
+    gap: 20px; /* Espacio entre las columnas */
+    padding: 20px;
+}
+
+.location-center {
+    text-align: center; /* Centra el contenido en la columna central */
+}
+
+.location-left img,
+.location-right img {
+    width: 100%; /* Ajusta el tamaño de las imágenes para que ocupen toda la columna */
+    height: 100%;
+    border-radius: 10px; /* Bordes redondeados para las imágenes */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.location-images {
+    display: flex;
+    justify-content: space-between;
+}
+
+.location-images img {
+    width: 45%; /* Ajusta el tamaño de las imágenes para que entren las dos en la misma fila */
+    border-radius: 10px; /* Bordes redondeados para las imágenes */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    margin-top: 5%;
+}
+
+.location-images img:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el mouse */
+}
+
+
+.location-images2 img {
+    width: 45%; /* Ajusta el tamaño de las imágenes para que entren las dos en la misma fila */
+    border-radius: 10px; /* Bordes redondeados para las imágenes */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    margin-top: 10%;
+}
+
+.location-images2 img:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el mouse */
+}
+
+.social {
+    margin: 0;
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social .social-item {
+    margin: 0 30px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social .social-item .social-link {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    text-align: center;
+    transform: perspective(1000px) rotate(-30deg) skew(25deg)
+    translate(0, 0);
+    transition: all 0.4s ease;
+}
+
+.social .social-item .social-link::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: -10px;
+    height: 100%;
+    width: 10px;
+    background: #b1b1b1;
+    transition: all 0.4s ease;
+    transform: rotate(0deg) skewY(-45deg);
+}
+
+.social .social-item .social-link::after {
+    content: "";
+    position: absolute;
+    top: 40px;
+    left: -5px;
+    height: 10px;
+    width: 100%;
+    background: #b1b1b1;
+    transition: all 0.4s ease;
+    transform: rotate(0deg) skewX(-45deg);
+}
+
+.social .social-item .social-link:hover {
+    transform: perspective(1000px) rotate(-30deg) skew(25deg) translate(5px, -5px);
+    box-shadow: -20px 20px 10px rgba(0, 0, 0, 0.5);
+}
+
+.social .social-item:nth-child(1) a {
+    color: #3b5999;
+}
+
+.social .social-item:nth-child(1):hover a {
+    background: #3b5999;
+}
+
+.social .social-item:nth-child(1):hover a::before {
+    background: #3b5999;
+}
+
+.social .social-item:nth-child(1):hover a::after {
+    background: #3b5999;
+}
+
+.social .social-item:nth-child(2) a {
+    color: #55acee;
+}
+
+.social .social-item:nth-child(2):hover a {
+    background: #55acee;
+}
+
+.social .social-item:nth-child(2):hover a::before {
+    background: #55acee;
+}
+
+.social .social-item:nth-child(2):hover a::after {
+    background: #55acee;
+}
+
+.social .social-item:nth-child(3) a {
+    color: #dd4b39;
+}
+
+.social .social-item:nth-child(3):hover a {
+    background: #dd4b39;
+}
+
+.social .social-item:nth-child(3):hover a::before {
+    background: #dd4b39;
+}
+
+.social .social-item:nth-child(3):hover a::after {
+    background: #dd4b39;
+}
+
+.social .social-item:nth-child(4) a {
+    color: #e4405f;
+}
+
+.social .social-item:nth-child(4):hover a {
+    background: #e4405f;
+}
+
+.social .social-item:nth-child(4):hover a::before {
+    background: #e4405f;
+}
+
+.social .social-item:nth-child(4):hover a::after {
+    background: #e4405f;
+}
+
+.social .social-item .social-link:hover {
+    color: #ffffff;
+}
+
+/* Agrega estilos para el formulario */
+.reservation-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Agrega estilos para los campos del formulario */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    color:#eee;
+}
+
+.form-group input[type="date"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 300px;
+}
+
+/* Agrega estilos para el botón */
+.reservation-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #071952;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.reservation-button:hover {
+    background-color: #0c2f88;
+}
+
+/* Agrega estilos para el formulario en dispositivos móviles */
+@media (max-width: 768px) {
+    .reservation-form {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 190px;
+    perspective: 1000px;
+    font-family: sans-serif;
+    margin-left: 100;
+}
+
+
+.title {
+    font-size: 1.5em;
+    font-weight: 900;
+    text-align: center;
+    margin: 0;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border: 1px solid #4682B4; /* Cambiado a un tono azul */
+    border-radius: 1rem;
+}
+
+.flip-card-front {
+    background: linear-gradient(120deg, #93cbdd 60%, #449be7 88%, #496ce9 40%, rgb(80 139 255 / 60%) 48%);
+    color: white;
+}
+
+.flip-card-back {
+    background: linear-gradient(120deg, #5f62f5 30%, #4682B4 88%, #6666f5 40%, #5f70ed 78%);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.flip-card2 {
+    background-color: transparent;
+    width: 190px;
+    perspective: 1000px;
+    font-family: sans-serif;
+    margin-right: 100;
+}
+
+
+.title2 {
+    font-weight: 900;
+    text-align: center;
+    margin: 0;
+}
+
+.flip-card2-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card2:hover .flip-card2-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card2-front, .flip-card2-back {
+    box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border: 1px solid #4682B4; /* Cambiado a un tono azul */
+    border-radius: 1rem;
+}
+
+.flip-card2-front {
+    background: linear-gradient(120deg, #93cbdd 60%, #449be7 88%, #496ce9 40%, rgb(80 139 255 / 60%) 48%);
+    color: white;
+}
+
+.flip-card2-back {
+    background: linear-gradient(120deg, #5f62f5 30%, #4682B4 88%, #6666f5 40%, #5f70ed 78%);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+
+
+.circle {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(#cbf9e8 0, #b8f2e3 12.5%, #a3eadf 25%, #8ae2db 37.5%, #6cd8d8 50%, #47ced6 62.5%, #00c5d7 75%, #00bcd8 87.5%, #00b3da 100%);
+    border-radius: 50%;
+    position: absolute;
+    animation: move-up6 2s ease-in infinite alternate-reverse;
+}
+
+.circle:nth-child(1) {
+    top: -45px;
+    left: -40px;
+}
+
+.circle:nth-child(2) {
+    bottom: -89px;
+    right: -85px;
+    animation-name: move-down1;
+}
+
+@keyframes move-up6 {
+    to {
+    transform: translateY(-10px);
+    }
+}
+
+@keyframes move-down1 {
+    to {
+    transform: translateY(10px);
+    }
+}
+
