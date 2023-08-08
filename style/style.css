@@ -163,7 +163,7 @@ body {
 /* Estilos para los botones de navegación */
 .nav-links a {
     position: relative;
-    font-size: 17px;
+    font-size: 16px;
     text-transform: uppercase;
     text-decoration: none;
     padding: 1em 2.5em;
