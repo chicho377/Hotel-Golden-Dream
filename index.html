@@ -1,7 +1,18 @@
 <title>Hotel Golden Dream</title>
 <link rel="icon" href="img/Favicon.ico" type="image/png">
 <link rel="stylesheet" type="text/css" href="style/style.css">
-<script src="header.html"></script>
+<div id="header"></div>
+
+<script>
+  fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header').innerHTML = data;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+</script>
 
 <div id="welcome" class="section">
     <div class="left-image">
